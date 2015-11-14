@@ -17,3 +17,26 @@ Some key elements we will be looking for in the application are:
 *	Submissions for the Android platform may only use third party libraries or open source code for the purpose of unit testing.
 *	For other platforms the use of frameworks, libraries, and open-source code is allowed – but please reference their use in comments in the code. Please use package management for open source dependencies where suitable. 
 *	When complete, please fork this repository, commit your code via the GIT tools, and send us a pull request. 
+
+##About the Code
+
+Contact
+*   Joseph Lee @ joseph9413@hotmail.com
+
+Project 3rd party pods used:
+*   AFNetworking -> https://github.com/AFNetworking/AFNetworking 
+*   Mantle -> https://github.com/Mantle/Mantle
+*   MBProgressHUD -> https://github.com/jdg/MBProgressHUD
+
+##Code Guide and Explanation 
+
+Code Explanation
+*   ForecastKit is the extraction of the forecast functionality. The ForecastMapView class handles all the map UI, locating user location, and retrieving/displaying of the forecast.
+*   ForecastMapView allows delegation methods for customization using it's protocol
+
+UI Explanation
+*   GPS location and forecast preduction is automatically fetched when location services have been authorized
+*   Refresh button at bottom right requests for forecast at current user location. It removes previous map forecast annotations
+
+Concerns
+*   The requirement was to launch a single call at application launch. However this didn't quite fit into the 'separation of concerns'. My application required locating the user's gps location and displaying a corresponding MapView UI when forecast has been retrieved. Fufilling this requirement and delegating coding in the AppDelegate did not make sense. 
